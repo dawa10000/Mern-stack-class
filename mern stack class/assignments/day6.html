@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mern Task Day6</title>
+    <style>
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 27px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        ul li {
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .list ul {
+            gap: 35px;
+        }
+
+        .social ul {
+            gap: 20px;
+        }
+
+        main {
+            width: 80vw;
+            margin: 27px;
+            padding-left: 200px;
+            height: 500px;
+            background-color: rgba(244, 247, 249, 0.919);
+            display: flex;
+            align-items: center;
+
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .text span {
+            font-size: 48px;
+            width: 478px;
+            font-weight: 700;
+
+        }
+
+        .text p {
+            width: 424px;
+            margin-top: 20px;
+
+        }
+
+        .email {
+            margin-top: 30px;
+        }
+
+        .email input {
+            width: 250px;
+            height: 35px;
+
+        }
+
+        .email button {
+            width: 150px;
+            height: 35px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><img src="images/logo.jpg" alt=""></div>
+        <div class="list">
+            <ul>
+                <li>About</li>
+                <li>Works</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="social">
+            <ul>
+                <li><img src="images/1.jpg" alt=""></li>
+                <li><img src="images/2.jpg" alt=""></li>
+                <li><img src="images/3.jpg" alt=""></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="text">
+            <span>Building digital</span>
+            <span>products, brands</span>
+            <span style="color: rgba(68, 37, 243, 0.807);">experience.</span>
+            <p>a <strong>Product Designer</strong> and <strong>Visual Developer</strong> in SF. I specialize in UI/UX
+                Design, Responsive Web Design, and Visual Development</p>
+            <div class="email">
+                <input type="email" placeholder="Email address">
+                <button style="background-color: rgba(68, 37, 243, 0.807);">Connect With Me</button>
+            </div>
+        </div>
+        <div class="profile">
+            <img height="500px" width="450px" src="images/profile.jpg" alt="">
+        </div>
+    </main>
+</body>
+
+</html>
