@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            margin: auto;
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 5px 5px 10px black;
+        }
+
+        .text {
+            font-size: 24px;
+            color: white;
+            font-weight: bolder;
+            font-family: 'courier New', Courier, monospace;
+            text-shadow: 2px 2px gray;
+        }
+
+        .box1 {
+            height: 100px;
+            width: 500px;
+            background-color: blue;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: 0 0 10px black;
+        }
+
+        .box1:hover {
+            background-color: aqua;
+        }
+
+        input:focus {
+            outline: 3px solid orange;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        .list{
+            list-style: none;
+        }
+
+        li::before{
+            content:"be";
+        }
+
+        li::after{
+            content:"af";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p class="text">Hello world</p>
+    </div>
+    <div class="box1">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+    </div>
+    <div class="link">
+        <a href="https://www.google.com">Google</a>
+    </div>
+        <div class="list">
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Mango</li>
+                <li>Orange</li>
+            </ul>
+        </div>
+
+</body>
+
+</html>

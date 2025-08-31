@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day9task</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      body {
+        background-color: #71676725;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 50px;
+        background-color: white;
+        padding: 7px;
+        width: 100%;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+      }
+      .title {
+        color: #ff2e08;
+        font-size: 18px;
+      }
+
+      .post {
+        background-color: white;
+        height: 60px;
+        padding: 12px 23px;
+        width: 100%;
+        max-width: 55vw;
+        margin-top: 27px;
+        border-radius: 15px;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .post input {
+        width: 100%;
+        border-radius: 25px;
+        border: 0;
+        height: 35px;
+        background-color: #71676725;
+      }
+
+      .publish button {
+        background-color: #ff2e08;
+        padding: 9px 15px;
+        border-radius: 20px;
+        color: white;
+        border: 0;
+      }
+
+      .body {
+        width: 100%;
+        max-width: 55vw;
+        background-color: white;
+        margin-top: 17px;
+        border-radius: 15px;
+        font-size: 13px;
+      }
+
+      .first {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 23px;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+      }
+      .rajesh {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .status input {
+        width: 95%;
+        border-radius: 25px;
+        border: 0;
+        height: 35px;
+        background-color: #71676725;
+        padding: 12px 23px;
+        margin: 5px 15px;
+      }
+
+      .photo img {
+        width: 100%;
+        padding: 0 18px;
+        border-radius: 7%;
+        height: auto;
+      }
+
+      .choose {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      .choose button {
+        padding: 7px 23px;
+        border-radius: 20px;
+        border: 0;
+        margin-top: 9px;
+        margin-right: 36px;
+        background-color: #ff2e08;
+      }
+
+      .like {
+        padding: 7px 19px;
+      }
+
+      .cmt {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin: 13px;
+      }
+      .anish {
+        display: flex;
+        flex-direction: column;
+      }
+
+        .post2 {
+        background-color: white;
+        padding: 12px 23px;
+        margin-top: 5px;
+        border-radius: 15px;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .post2 input {
+        width: 100%;
+        border-radius: 25px;
+        border: 0;
+        height: 35px;
+        background-color: #71676725;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="title">
+        <img width="21px" src="globe.png" alt="" /><strong> Groupomania</strong>
+      </div>
+      <div class="profile"><img width="25px" src="profile.png" alt="" /></div>
+    </header>
+
+    <main>
+      <div class="post">
+        <img width="25px" src="profile.png" alt="" />
+        <input type="text" placeholder="     Write any think you like..." />
+        <div class="publish">
+          <button>Publish</button>
+        </div>
+      </div>
+
+      <div class="body">
+        <div class="first">
+          <div class="rajesh">
+            <img width="25px" src="profile.png" alt="" />
+            <div class="hero">
+              <span><strong>Rajesh Hamal</strong></span>
+              <span style="color: #2c272791">1 hour ago</span>
+            </div>
+          </div>
+          <div class="comment">
+            <img width="25px" src="option.png" alt="" />
+          </div>
+        </div>
+
+        <div class="status">
+          <input
+            type="text"
+            style="font-weight: 600"
+            placeholder="Having fun playing Black myth Wukong..."
+          />
+        </div>
+
+        <div class="photo">
+          <img src="black.jpg" alt="" />
+        </div>
+
+        <div class="choose">
+          <button>Post</button>
+          <button style="background-color: bisque">Cancel</button>
+        </div>
+
+        <div class="like">
+          <img width="12px" src="heart.png" alt="" /> 3
+          <img width="12px" src="chat-bubble.png" alt="" /> 2
+        </div>
+
+        <div class="cmt">
+          <img width="25px" src="profile.png" alt="" />
+          <div class="anish">
+            <span><strong>Anish</strong></span>
+            <span>What a game?</span>
+          </div>
+        </div>
+
+        <div class="cmt">
+          <img width="25px" src="profile.png" alt="" />
+          <div class="anish">
+            <span><strong>Bhim</strong></span>
+            <span>I love this game so much...</span>
+          </div>
+        </div>
+        <div class="post2">
+          <img width="25px" src="profile.png" alt="" />
+          <input type="text" placeholder="  Comment here..." />
+          <div class="publish">
+            <button>Comment</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

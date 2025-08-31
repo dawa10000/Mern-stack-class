@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Toggle button (hidden by default) */
+        .toggle-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .toggle-btn div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px 0;
+        }
+
+        /* Responsive: show toggle below 900px */
+        @media (max-width: 900px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background: #444;
+                padding: 10px;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .toggle-btn {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>Logo</h2>
+        <div class="menu" id="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="toggle-btn" id="toggle-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+        const menu = document.getElementById('menu');
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+
+</html>

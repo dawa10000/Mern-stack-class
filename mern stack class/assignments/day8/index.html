@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 27px;
+
+        }
+
+        .list ul {
+            display: flex;
+            list-style: none;
+            cursor: pointer;
+            gap: 30px;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button button {
+            border-radius: 20px;
+            padding: 12px 23px;
+            background-color: #49BD8D;
+            color: white;
+            border: 0;
+        }
+
+        .shop {
+            margin-left: 110px;
+            margin-top: 27px;
+            font-size: 23px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 110px;
+            margin-right: 130px;
+            margin-top: 17px;
+        }
+
+        main {
+            background-color: #F8F8F8;
+        }
+
+        .main {
+            display: flex;
+            margin-left: 52px;
+            flex-wrap: wrap;
+        }
+
+        .med {
+            margin: 27px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .med img {
+            height: 320px;
+            border: 2px solid #00879D;
+        }
+
+        .med button {
+            background-color: #49BD8D;
+            border-radius: 20px;
+            padding: 5px 34px;
+            color: white;
+            border: 0;
+
+        }
+
+        .results button {
+            padding: 5px 14px;
+            border-radius: 20px;
+            border: 0;
+        }
+
+        .dropdown select {
+            border-radius: 20px;
+            padding: 5px 9px;
+        }
+
+        @media screen and (max-width:900px) {
+            .main {
+                display: flex;
+                flex-direction: column;
+            }
+        @media screen and (max-width:1200px) {
+            .main {
+                display: column;
+                grid-template-columns: auto auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="title">
+            <span><Strong style="font-size: 27px;">XTRA</Strong></span>
+            <span style="font-size: 13px;">BUSINESS</span>
+        </div>
+        <div class="list">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Blog</li>
+                <li><select style="border: 0;" name="pages" id="pages">
+                        <option value="Pages">Pages</option>
+                    </select></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="button">
+            <button>Free Consulation</button>
+        </div>
+    </nav>
+    <main>
+        <div class="shop">
+            <strong>Shop</strong>
+        </div>
+        <div class="product">
+            <div class="results">
+                <button style="background-color: #EAF6F6;">Showing 1-6 of 8 results</button>
+            </div>
+            <div class="dropdown">
+                <select name="products" id="products">
+                    <option value="6 Products">6 Products</option>
+                </select>
+                <select name="Default" id="Default">
+                    <option value="Default">Default</option>
+                </select>
+            </div>
+        </div>
+        <div class="main">
+            <div class="med med1">
+                <span></span><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhceVJ6J3NuZfcRIt_pd5Lxtc8EU35s_g5Ag&s"
+                    alt=""></span>
+                <span><strong>Pack 2</strong></span>
+                <span>Gadget</span>
+                <span><button>Add to cart</button></span>
+            </div>
+            <div class="med med2">
+                <span></span><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhceVJ6J3NuZfcRIt_pd5Lxtc8EU35s_g5Ag&s"
+                    alt=""></span>
+                <span><strong>Package 1</strong></span>
+                <span>Exclusive</span>
+                <span><button>Add to cart</button></span>
+            </div>
+            <div class="med med3">
+                <span></span><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhceVJ6J3NuZfcRIt_pd5Lxtc8EU35s_g5Ag&s"
+                    alt=""></span>
+                <span><strong>Package 2</strong></span>
+                <span>Gadget</span>
+                <span><button>Add to cart</button></span>
+            </div>
+            <div class="med med3">
+                <span></span><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhceVJ6J3NuZfcRIt_pd5Lxtc8EU35s_g5Ag&s"
+                    alt=""></span>
+                <span><strong>Package 2</strong></span>
+                <span>Gadget</span>
+                <span><button>Add to cart</button></span>
+            </div>
+            <div class="med med3">
+                <span></span><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhceVJ6J3NuZfcRIt_pd5Lxtc8EU35s_g5Ag&s"
+                    alt=""></span>
+                <span><strong>Package 2</strong></span>
+                <span>Gadget</span>
+                <span><button>Add to cart</button></span>
+            </div>
+            <div class="med med3">
+                <span></span><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhceVJ6J3NuZfcRIt_pd5Lxtc8EU35s_g5Ag&s"
+                    alt=""></span>
+                <span><strong>Package 2</strong></span>
+                <span>Gadget</span>
+                <span><button>Add to cart</button></span>
+
+                
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
