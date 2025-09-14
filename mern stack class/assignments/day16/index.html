@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="flex items-center justify-between bg-white px-4 md:px-6 py-3 shadow">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <span class="text-2xl font-bold text-blue-800">Friends.</span>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="hidden md:flex flex-1 px-6">
+      <input type="text" placeholder="Search for friends, groups, pages" class="w-full rounded-full bg-gray-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <!-- Icons + Profile -->
+    <div class="flex items-center space-x-4">
+      <button class="hidden md:block">🔔</button>
+      <button class="hidden md:block">💬</button>
+      <img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px"class="w-10 h-10 rounded-full" alt="profile">
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="flex flex-col md:flex-row max-w-7xl mx-auto mt-4 space-y-4 md:space-y-0 md:space-x-4 px-2 md:px-4">
+
+    <!-- Left Sidebar -->
+    <aside class="hidden lg:block w-1/5 space-y-4">
+      <div class="bg-white p-4 rounded-xl shadow space-y-3">
+        <a href="#" class="flex items-center space-x-2 text-blue-600 font-semibold"><span>🏠</span><span>Home</span></a>
+        <a href="#" class="flex items-center space-x-2"><span>👥</span><span>Friends</span></a>
+        <a href="#" class="flex items-center space-x-2"><span>👨‍👩‍👦</span><span>Groups</span></a>
+        <a href="#" class="flex items-center space-x-2"><span>🛒</span><span>Marketplace</span></a>
+        <a href="#" class="flex items-center space-x-2"><span>💾</span><span>Saved</span></a>
+        <a href="#" class="flex items-center space-x-2"><span>📄</span><span>Pages</span></a>
+        <a href="#" class="flex items-center space-x-2"><span>⭐</span><span>Favourites</span></a>
+        <a href="#" class="flex items-center space-x-2"><span>⬇️</span><span>See More</span></a>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">My Group</h3>
+        <ul class="space-y-2">
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>The Nerd Head</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Take a Trip</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Papa Ki Pari</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D height="32px" width="32px"" class="rounded-full"> <span>College Friends</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>My Dream House</span></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Feed -->
+    <section class="w-full lg:w-3/5 space-y-4">
+
+      <!-- Create Post -->
+      <div class="bg-white p-4 rounded-xl shadow">
+        <div class="flex space-x-3">
+          <img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px"class="w-10 h-10 rounded-full">
+          <input type="text" placeholder="What’s on your mind?" class="flex-1 bg-gray-100 rounded-full px-4 py-2 focus:outline-none">
+        </div>
+        <div class="flex flex-wrap justify-between mt-3 text-gray-500 gap-2">
+          <button class="flex items-center space-x-1 hover:text-red-500"><span>🎥</span> <span>Go Live</span></button>
+          <button class="flex items-center space-x-1 hover:text-green-500"><span>📷</span> <span>Photo</span></button>
+          <button class="flex items-center space-x-1 hover:text-pink-500"><span>🎞</span> <span>Video</span></button>
+          <button class="flex items-center space-x-1 hover:text-yellow-500"><span>😊</span> <span>Feeling</span></button>
+        </div>
+      </div>
+
+      <!-- Post -->
+      <div class="bg-white p-4 rounded-xl shadow">
+        <div class="flex items-center space-x-3">
+          <img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="w-10 h-10 rounded-full">
+          <div>
+            <h4 class="font-semibold">John Carter</h4>
+            <span class="text-gray-500 text-sm">4 hours ago</span>
+          </div>
+        </div>
+        <p class="mt-2 text-gray-700">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg" class="w-full rounded-xl mt-3">
+        <div class="flex justify-between items-center mt-3 text-gray-500">
+          <div class="flex space-x-4">
+            <span>❤️ 1.2k</span>
+            <span>💬 200</span>
+            <span>🔄 17</span>
+          </div>
+          <input type="text" placeholder="Write your comment" class="bg-gray-100 px-4 py-1 rounded-full w-1/2">
+        </div>
+        <div class="mt-3 border-t pt-2 text-sm text-gray-600">
+          <p><b>Annalise Hane</b> Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+          <button class="text-blue-600 text-xs mt-1">View all comments ▼</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Right Sidebar -->
+    <aside class="hidden lg:block w-1/5 space-y-4">
+      <!-- Birthdays -->
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">🎂 Birthdays</h3>
+        <p>Pola Foster and 3 other friends have birthday today</p>
+      </div>
+
+      <!-- Activity -->
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">Latest Activity</h3>
+        <p><b>Hally Harald Gomes</b> added a photo in Talk.js <span class="text-xs text-gray-500">1h ago</span></p>
+        <p class="mt-2"><b>Alex Kai</b> sent you a friend request <span class="text-xs text-gray-500">3h ago</span></p>
+      </div>
+
+      <!-- Active Friends -->
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">Active Friends</h3>
+        <ul class="space-y-2">
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Jaden Chance</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Arezki Williams</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Rose James</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Tman Mats</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Alex Andrew</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Kaixi Cark</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Hamid Oskip</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>Serena Lewis</span></li>
+          <li class="flex items-center space-x-2"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="32px" width="32px" class="rounded-full"> <span>April Sky</span></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Bottom Nav for Mobile -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-inner flex justify-around py-2 lg:hidden">
+    <button class="flex flex-col items-center text-blue-600"><span>🏠</span><span class="text-xs">Home</span></button>
+    <button class="flex flex-col items-center"><span>👥</span><span class="text-xs">Friends</span></button>
+    <button class="flex flex-col items-center"><span>👨‍👩‍👦</span><span class="text-xs">Groups</span></button>
+    <button class="flex flex-col items-center"><span>🛒</span><span class="text-xs">Market</span></button>
+    <button class="flex flex-col items-center"><span>⭐</span><span class="text-xs">Saved</span></button>
+  </nav>
+
+</body>
+</html>

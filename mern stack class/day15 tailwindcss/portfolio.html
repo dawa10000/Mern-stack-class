@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adarsh Lama - Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <h1 class="text-2xl font-bold">My Portfolio</h1>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+
+      <!-- Mobile Toggle Button -->
+      <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <ul id="mobile-menu"
+        class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out flex-col mt-4 space-y-4 md:hidden text-center bg-white shadow-md rounded-lg">
+      <li><a href="#home" class="block py-2 hover:text-blue-500">Home</a></li>
+      <li><a href="#about" class="block py-2 hover:text-blue-500">About</a></li>
+      <li><a href="#projects" class="block py-2 hover:text-blue-500">Projects</a></li>
+      <li><a href="#contact" class="block py-2 hover:text-blue-500">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="flex flex-col items-center justify-center text-center py-20 bg-gray-50">
+    <img src="https://via.placeholder.com/150" alt="Profile"
+         class="rounded-full w-32 h-32 mb-6 shadow-lg">
+    <h2 class="text-4xl font-bold mb-2">Hi, I'm Adarsh Lama 👋</h2>
+    <p class="text-lg text-gray-600 mb-4">MERN Stack Developer</p>
+    <a href="#projects" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+      View My Work
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container mx-auto py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+    <p class="text-center text-gray-700 max-w-2xl mx-auto">
+      I am a passionate developer who loves building modern web applications
+      using the MERN stack (MongoDB, Express, React, Node.js). I enjoy learning
+      new technologies and creating projects that solve real-world problems.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-100 py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+    <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+      
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <img src="https://via.placeholder.com/400x250" alt="Project 1">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project One</h3>
+          <p class="text-gray-600 mb-4">A short description of the project goes here.</p>
+          <a href="#" class="text-blue-500 hover:underline">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <img src="https://via.placeholder.com/400x250" alt="Project 2">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project Two</h3>
+          <p class="text-gray-600 mb-4">A short description of the project goes here.</p>
+          <a href="#" class="text-blue-500 hover:underline">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <img src="https://via.placeholder.com/400x250" alt="Project 3">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project Three</h3>
+          <p class="text-gray-600 mb-4">A short description of the project goes here.</p>
+          <a href="#" class="text-blue-500 hover:underline">View Project →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+    <p class="mb-6">Feel free to reach out for collaborations or just a friendly hello 👇</p>
+    <a href="mailto:youremail@example.com"
+       class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
+      Send Email
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6 mt-10">
+    <p>© 2025 Adarsh Lama. All rights reserved.</p>
+  </footer>
+
+  <!-- Script for Mobile Menu Toggle -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("max-h-0")) {
+        mobileMenu.classList.remove("max-h-0");
+        mobileMenu.classList.add("max-h-96");
+      } else {
+        mobileMenu.classList.add("max-h-0");
+        mobileMenu.classList.remove("max-h-96");
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -2,357 +2,315 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawa Lama - MERN Stack Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dawa Lama - MERN Stack Developer</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
 
-    <style>
-        :root {
-            --primary-color: #00c6ff;
-            --secondary-color: #ff00ff;
-            --dark-bg: #0d1117;
-            --dark-card: #161b22;
-            --dark-card-hover: #1f2630;
-            --dark-text: #ffffff;
+    /* Tilt effect */
+    .hover-tilt {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-            --light-bg: #f9f9f9;
-            --light-card: #ffffff;
-            --light-card-hover: #e0e0e0;
-            --light-text: #333333;
+    /* Glowing border effect */
+    .hover-tilt::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #00c6ff, #ff00ff, #00ffe0, #ff00ff);
+      background-size: 400%;
+      border-radius: 1rem;
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-            --accent-color: #00ffe0;
-        }
+    .hover-tilt:hover::before {
+      opacity: 1;
+      animation: glow 6s linear infinite;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-            transition: all 0.4s;
-        }
+    @keyframes glow {
+      0% {
+        background-position: 0% 50%;
+      }
 
-        /* DARK MODE DEFAULT */
-        body.dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-        }
+      50% {
+        background-position: 100% 50%;
+      }
 
-        body.light-mode {
-            background-color: var(--light-bg);
-            color: var(--light-text);
-        }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-        .navbar {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s;
-        }
+    /* Hamburger Icon */
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background: white;
+      border-radius: 3px;
+      transition: all 0.4s ease;
+    }
 
-        .navbar-brand,
-        .nav-link {
-            font-weight: bold;
-            color: #fff !important;
-        }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
 
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            border-radius: 30px;
-            padding: 10px 25px;
-            font-weight: bold;
-            color: #fff;
-            transition: 0.3s;
-            box-shadow: 0 0 15px var(--primary-color);
-        }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-        .btn-primary:hover {
-            opacity: 0.85;
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px var(--secondary-color);
-        }
-
-        .btn-resume {
-            border-radius: 30px;
-            padding: 10px 25px;
-            font-weight: bold;
-            margin-left: 10px;
-            transition: 0.3s;
-        }
-
-        body.dark-mode .btn-resume {
-            background: var(--dark-bg);
-            color: var(--secondary-color);
-            border: 2px solid var(--secondary-color);
-        }
-
-        body.dark-mode .btn-resume:hover {
-            background: var(--secondary-color);
-            color: #fff;
-            box-shadow: 0 0 20px var(--secondary-color);
-        }
-
-        body.light-mode .btn-resume {
-            background: var(--light-card);
-            color: var(--secondary-color);
-            border: 2px solid var(--secondary-color);
-        }
-
-        body.light-mode .btn-resume:hover {
-            background: var(--secondary-color);
-            color: #fff;
-            box-shadow: 0 0 20px var(--secondary-color);
-        }
-
-        #home {
-            text-align: center;
-            padding: 100px 20px;
-            transition: all 0.4s;
-        }
-
-        body.dark-mode #home {
-            background: linear-gradient(135deg, #1f2630, #0d1117);
-            color: var(--dark-text);
-        }
-
-        body.light-mode #home {
-            background: linear-gradient(135deg, #e0e0e0, #f9f9f9);
-            color: var(--light-text);
-        }
-
-        #home img {
-            border: 4px solid var(--primary-color);
-            box-shadow: 0 0 20px var(--primary-color);
-            transition: all 0.4s;
-        }
-
-        #skills,
-        #projects,
-        #contact {
-            padding: 80px 20px;
-            transition: all 0.4s;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: bold;
-            font-size: 2rem;
-            color: var(--primary-color);
-            text-shadow: 0 0 10px var(--primary-color);
-        }
-
-        .card {
-            padding: 20px;
-            border: none;
-            border-radius: 20px;
-            transition: all 0.4s;
-        }
-
-        body.dark-mode .card {
-            background-color: var(--dark-card);
-            color: var(--dark-text);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        body.dark-mode .card:hover {
-            background-color: var(--dark-card-hover);
-            box-shadow: 0 0 25px var(--accent-color), 0 0 15px var(--secondary-color);
-            transform: translateY(-10px);
-        }
-
-        body.light-mode .card {
-            background-color: var(--light-card);
-            color: var(--light-text);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        body.light-mode .card:hover {
-            background-color: var(--light-card-hover);
-            box-shadow: 0 0 15px var(--secondary-color);
-            transform: translateY(-5px);
-        }
-
-        .card h5 {
-            color: var(--accent-color);
-            font-weight: bold;
-            text-shadow: 0 0 5px var(--accent-color);
-        }
-
-        #contact a {
-            transition: 0.3s;
-        }
-
-        #contact a:hover {
-            text-shadow: 0 0 10px var(--secondary-color);
-        }
-
-        .btn-toggle {
-            border-radius: 50%;
-            padding: 0.3rem 0.5rem;
-            font-size: 1.2rem;
-            border: 2px solid var(--primary-color);
-            transition: 0.3s;
-        }
-
-        .btn-toggle:hover {
-            box-shadow: 0 0 15px var(--secondary-color);
-        }
-    </style>
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  </style>
 </head>
 
-<body class="dark-mode">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">Dawa Lama</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item">
-                        <button class="btn-toggle ms-2" onclick="toggleTheme()">🌙</button>
-                    </li>
-                </ul>
+<body class="bg-[#0d1117] text-white">
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-gradient-to-r from-[#00c6ff] to-[#ff00ff] shadow-lg z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+    <a href="#home" class="text-white font-bold text-lg">Dawa Lama</a>
+    <!-- Mobile Button -->
+    <button class="md:hidden focus:outline-none hamburger" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- Desktop Menu -->
+    <div id="menu" class="hidden md:flex space-x-6">
+      <a href="#home" class="text-white font-semibold">Home</a>
+      <a href="#skills" class="text-white font-semibold">Skills</a>
+      <a href="#projects" class="text-white font-semibold">Projects</a>
+      <a href="#contact" class="text-white font-semibold">Contact</a>
+    </div>
+  </div>
+  <!-- Mobile Dropdown -->
+<div id="mobile-menu" class="hidden flex-col bg-[#161b22] text-center space-y-3 py-3">
+  <a href="#home" class="text-white font-semibold">Home</a>
+  <a href="#skills" class="text-white font-semibold">Skills</a>
+  <a href="#projects" class="text-white font-semibold">Projects</a>
+  <a href="#contact" class="text-white font-semibold">Contact</a>
+</div>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section id="home"
+  class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 bg-gradient-to-br from-[#1f2630] to-[#0d1117]">
+
+    <img src="profile.jpg" alt="Dawa Lama"
+      class="w-40 h-40 rounded-full border-4 border-[#00c6ff] shadow-xl mb-6 object-cover">
+    <h1
+      class="text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#00c6ff] to-[#ff00ff]">
+      Dawa Lama</h1>
+    <p class="text-2xl mt-2 font-semibold text-gray-300">MERN Stack Developer</p>
+    <p class="mt-4 max-w-4xl text-lg leading-relaxed text-gray-400">I am a passionate and results-driven MERN stack
+      developer with a strong foundation in building dynamic, full-stack web applications. I specialize in leveraging
+      MongoDB, Express.js, React, and Node.js to create efficient and scalable solutions. My skills range from designing
+      user-friendly interfaces to developing robust back-end APIs. I'm dedicated to writing clean, maintainable code and
+      I am always eager to learn new technologies to deliver high-quality products.</p>
+<div class="mt-6 flex flex-col sm:flex-row gap-4">
+  <a href="#contact"
+    class="bg-gradient-to-r from-[#00c6ff] to-[#ff00ff] text-white font-bold py-2 px-6 rounded-full shadow-lg hover:scale-105 transition text-center">
+    Hire Me
+  </a>
+  <a href="resume.pdf" download
+    class="border-2 border-[#ff00ff] text-[#ff00ff] font-bold py-2 px-6 rounded-full hover:bg-[#ff00ff] hover:text-white transition text-center">
+    📄 Download Resume
+  </a>
+</div>
+
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="text-center text-3xl font-bold text-[#00c6ff] drop-shadow mb-12">Tech Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- All skills cards with hover-tilt -->
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="100">⚛️
+          <h5 class="mt-3 font-bold text-[#00ffe0]">React.js</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="200">🌐
+          <h5 class="mt-3 font-bold text-[#00ffe0]">Node.js</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="300">📦
+          <h5 class="mt-3 font-bold text-[#00ffe0]">Express.js</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="400">🗄️
+          <h5 class="mt-3 font-bold text-[#00ffe0]">MongoDB</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="500">🔄
+          <h5 class="mt-3 font-bold text-[#00ffe0]">Redux</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="600">🔑
+          <h5 class="mt-3 font-bold text-[#00ffe0]">JWT Auth</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="700">⚡
+          <h5 class="mt-3 font-bold text-[#00ffe0]">REST APIs</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="800">💻
+          <h5 class="mt-3 font-bold text-[#00ffe0]">Git & GitHub</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="900">☁️
+          <h5 class="mt-3 font-bold text-[#00ffe0]">Cloud Hosting</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="1000">🛠️
+          <h5 class="mt-3 font-bold text-[#00ffe0]">CI/CD</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="1100">🎨
+          <h5 class="mt-3 font-bold text-[#00ffe0]">Tailwind CSS</h5>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 text-center shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="1200">🤖
+          <h5 class="mt-3 font-bold text-[#00ffe0]">AI APIs</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-6 bg-[#0d1117]">
+    <div class="container mx-auto">
+      <h2 class="text-center text-3xl font-bold text-[#00c6ff] drop-shadow mb-12">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Project cards -->
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="100">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">E-Commerce App</h5>
+          <p>Full-stack MERN e-commerce platform with authentication, product management, shopping cart, and Stripe payments.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="200">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Chat Application</h5>
+          <p>Real-time chat app using Socket.io and MERN stack with private, group messaging, and online status tracking.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="300">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Portfolio Website</h5>
+          <p>Responsive personal portfolio using React.js, Bootstrap, and AOS animations with dark mode styling.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="400">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Blog Platform</h5>
+          <p>MERN-based blogging platform with authentication, CRUD operations, and REST API backend for content management.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="500">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Task Manager App</h5>
+          <p>Full-stack task management app with React.js frontend, Node.js backend, JWT authentication, and MongoDB.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="600">
+          <h5 class="font-bold text-[#00ffe0] mb-2"> <img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Social Media Clone</h5>
+          <p>MERN stack social media app with user profiles, posts, likes, comments, and Redux for state management.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="700">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Weather App</h5>
+          <p>Weather forecast app using React, Node.js, and OpenWeather API with live data visualization.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="800">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Fitness Tracker</h5>
+          <p>MERN-based fitness tracker with progress dashboards, JWT auth, and MongoDB backend.</p>
+        </div>
+        <div class="bg-[#161b22] rounded-2xl p-6 shadow-lg hover-tilt" data-aos="fade-up" data-aos-delay="900">
+          <h5 class="font-bold text-[#00ffe0] mb-2"><img src="https://camo.githubusercontent.com/6e137aa922cbb4737792d54526fc2ac111a15d0a7606d2d6c7034143d99e75e1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6d65726e626f6f6b2f6769742b2f736f6369616c2e706e67" alt="">Online Learning Platform</h5>
+          <p>Full-stack e-learning platform with courses, quizzes, user dashboards, and Stripe integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Contact -->
+    <section id="contact" class="py-16 md:py-24 bg-white/[0.02] border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-semibold">Let's <span class="grad-text">Talk</span></h2>
+            <p class="mt-4 text-white/70">Want to collaborate or hire me? Drop a message — I'll get back to you shortly.</p>
+            <div class="mt-6 space-y-3 text-white/80">
+              <p><span class="text-white/60">Email:</span> <a class="underline hover:text-[var(--brand-2)]" href="mailto:dawa10001@gmail.com">dawa10001@gmail.com</a></p>
+              <p><span class="text-white/60">GitHub:</span> <a class="underline hover:text-[var(--brand-2)]" target="_blank" href="https://github.com/dawa10000">github.com/dawa10000</a></p>
+              <p><span class="text-white/60">LinkedIn:</span> <a class="underline hover:text-[var(--brand-2)]" target="_blank" href="https://www.linkedin.com/in/dawa-lama-15556a1ab/">linkedin.com/in/dawa-lama-15556a1ab</a></p>
             </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="d-flex flex-column align-items-center justify-content-center min-vh-100">
-        <img src="profile.jpg" alt="Dawa Lama" class="rounded-circle mb-4 shadow-lg"
-            style="width: 150px; height: 150px; object-fit: cover;">
-        <h1 class="display-4 fw-bold">Dawa Lama</h1>
-        <p class="lead">MERN Stack Developer</p>
-        <p>I am a passionate MERN Stack Developer skilled in building modern, scalable, and user-friendly web
-            applications using MongoDB, Express.js, React.js, and Node.js.</p>
-        <a href="#contact" class="btn btn-primary mt-3">Hire Me</a>
-        <a href="resume.pdf" class="btn btn-resume mt-3" download>📄 Download Resume</a>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Tech Skills</h2>
-            <div class="row g-4">
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card text-center">⚛️<h5 class="mt-3">React.js</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card text-center">🌐<h5 class="mt-3">Node.js</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card text-center">📦<h5 class="mt-3">Express.js</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card text-center">🗄️<h5 class="mt-3">MongoDB</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="card text-center">🔄<h5 class="mt-3">Redux</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="card text-center">🔑<h5 class="mt-3">JWT Auth</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="700">
-                    <div class="card text-center">⚡<h5 class="mt-3">REST APIs</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="800">
-                    <div class="card text-center">💻<h5 class="mt-3">Git & GitHub</h5>
-                    </div>
-                </div>
+          <form class="card rounded-3xl p-6 border border-white/10 bg-[#0b1020] grid gap-4" onsubmit="event.preventDefault(); alert('Thanks! Your message has been prepared for sending via your mail app.'); window.location.href = `mailto:dawa10001@gmail.com?subject=${encodeURIComponent(document.getElementById('name').value + ' — Portfolio Contact')}&body=${encodeURIComponent(document.getElementById('message').value)}`;">
+            <div>
+              <label for="name" class="text-sm text-white/70">Your Name</label>
+              <input id="name" type="text" required class="mt-1 w-full rounded-2xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 ring-[var(--brand-2)]" placeholder="Jane Doe" />
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100">
-                        <h5>E-Commerce App</h5>
-                        <p>Full-stack MERN e-commerce platform with user authentication, product management, shopping
-                            cart, and payment integration using Stripe API.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100">
-                        <h5>Chat Application</h5>
-                        <p>Real-time chat app using Socket.io and MERN stack with private, group messaging, and
-                            online/offline status tracking.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100">
-                        <h5>Portfolio Website</h5>
-                        <p>Responsive personal portfolio using React.js, Bootstrap, and AOS animations with dark/light
-                            mode toggle.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card h-100">
-                        <h5>Blog Platform</h5>
-                        <p>MERN-based blogging platform with user authentication, CRUD operations, and REST API backend
-                            for content management.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-                    <div class="card h-100">
-                        <h5>Task Manager App</h5>
-                        <p>Full-stack task management app with React.js frontend, Node.js/Express backend, JWT
-                            authentication, and MongoDB database.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-                    <div class="card h-100">
-                        <h5>Social Media Clone</h5>
-                        <p>MERN stack social media app with user profiles, posts, likes, comments, and Redux for state
-                            management.</p>
-                    </div>
-                </div>
+            <div>
+              <label for="email" class="text-sm text-white/70">Email</label>
+              <input id="email" type="email" required class="mt-1 w-full rounded-2xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 ring-[var(--brand-2)]" placeholder="jane@example.com" />
             </div>
+            <div>
+              <label for="message" class="text-sm text-white/70">Message</label>
+              <textarea id="message" rows="5" required class="mt-1 w-full rounded-2xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 ring-[var(--brand-2)]" placeholder="Hi Dawa, I'd like to discuss..."></textarea>
+            </div>
+            <button type="submit" class="mt-2 inline-flex items-center justify-center rounded-2xl px-6 py-3 bg-gradient-to-r from-[var(--brand)] to-[var(--brand-2)] font-semibold">Send Message</button>
+          </form>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container text-center">
-            <h2 class="section-title">Contact</h2>
-            <p>Email: <a href="mailto:dawa10001@gmail.com">dawa10001@gmail.com</a></p>
-            <p>Facebook: <a href="https://www.facebook.com/dawalama" target="_blank">facebook.com/dawalama</a></p>
-            <p>GitHub: <a href="https://github.com/dawa1000" target="_blank">github.com/dawa1000</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/dawalama" target="_blank">linkedin.com/in/dawalama</a></p>
-        </div>
-    </section>
+  <footer class="py-10 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white/60 text-sm">
+      <p>© <span id="year"></span> Dawa Lama. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="#home" class="hover:text-[var(--brand-2)]">Top ↑</a>
+        <a href="resume.pdf" download class="hover:text-[var(--brand-2)]">Resume</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1200, once: true });
+    // Mobile menu toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-        function toggleTheme() {
-            const body = document.body;
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-            } else {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-            }
-        }
-    </script>
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  mobileMenu.classList.toggle("hidden");
+  if (!mobileMenu.classList.contains("hidden")) {
+    mobileMenu.classList.add("flex");
+  } else {
+    mobileMenu.classList.remove("flex");
+  }
+});
+
+    // 3D Hover tilt effect for all cards
+    document.querySelectorAll(".hover-tilt").forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+        card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -7,6 +7,12 @@
             "name": "http://127.0.0.1:3002/mern stack class/day7/index2.html",
             "request": "launch",
             "url": "http://127.0.0.1:3002/mern stack class/day7/index2.html"
+        },
+        {
+            "type": "chrome",
+            "name": "http://127.0.0.1:3000/mern stack class/assignments/portfolio/index.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/mern stack class/assignments/portfolio/index.html"
         }
     ]
 }
