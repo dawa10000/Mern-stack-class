@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS All-in-One Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+    <!-- Navbar -->
+    <header
+        class="flex justify-between items-center p-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+        <h1 class="text-2xl font-extrabold">Tailwind Master</h1>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="hover:underline">Home</a>
+            <a href="#" class="hover:underline">Features</a>
+            <a href="#" class="hover:underline">Pricing</a>
+            <a href="#" class="hover:underline">Contact</a>
+        </nav>
+        <button class="md:hidden px-3 py-2 border rounded">Menu</button>
+    </header>
+
+    <!-- Hero -->
+    <section class="text-center py-16 bg-gradient-to-r from-indigo-500 to-pink-500 text-white">
+        <h2 class="text-5xl font-bold mb-4 animate-bounce">Welcome to Tailwind CSS</h2>
+        <p class="text-lg mb-6">The ultimate utility-first CSS framework 🚀</p>
+        <div class="space-x-4">
+            <button
+                class="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow hover:bg-indigo-100 transition">Get
+                Started</button>
+            <button
+                class="px-6 py-3 border border-white font-semibold rounded-lg hover:bg-white hover:text-indigo-600 transition">Learn
+                More</button>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="p-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition">
+            <h3 class="text-xl font-bold mb-2">Typography</h3>
+            <p class="mb-2">Classes for <span class="font-bold">bold</span>, <span class="italic">italic</span>, <span
+                    class="underline">underline</span>, <span class="line-through">strike</span>.</p>
+            <p class="uppercase text-sm text-gray-500">uppercase small text</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition">
+            <h3 class="text-xl font-bold mb-2">Flex & Grid</h3>
+            <div class="flex space-x-2 mb-4">
+                <span class="bg-blue-200 px-2 rounded">Flex</span>
+                <span class="bg-blue-300 px-2 rounded">Box</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="bg-green-200 p-2">1</div>
+                <div class="bg-green-300 p-2">2</div>
+                <div class="bg-green-400 p-2">3</div>
+            </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition">
+            <h3 class="text-xl font-bold mb-2">Spacing & Borders</h3>
+            <div class="p-4 border-2 border-dashed rounded-lg">padding + border</div>
+            <div class="mt-2 p-2 border-b-4 border-red-500">bottom border</div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition">
+            <h3 class="text-xl font-bold mb-2">Shadows & Radius</h3>
+            <div class="p-6 shadow-lg rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-center">Rounded
+            </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition">
+            <h3 class="text-xl font-bold mb-2">Responsive</h3>
+            <p class="sm:text-red-500 md:text-blue-500 lg:text-green-500">Resize me →</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:scale-105 transition">
+            <h3 class="text-xl font-bold mb-2">Transitions</h3>
+            <button class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-800 transition duration-300">Hover
+                Me</button>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="p-10 bg-gray-100 dark:bg-gray-800">
+        <h2 class="text-2xl font-bold mb-4 text-center">Forms</h2>
+        <form class="space-y-4 max-w-md mx-auto">
+            <input type="text" placeholder="Name" class="w-full p-2 border rounded focus:ring-2 focus:ring-indigo-500">
+            <input type="email" placeholder="Email"
+                class="w-full p-2 border rounded focus:ring-2 focus:ring-indigo-500">
+            <select class="w-full p-2 border rounded focus:ring-2 focus:ring-indigo-500">
+                <option>Select Option</option>
+                <option>Option A</option>
+                <option>Option B</option>
+            </select>
+            <textarea placeholder="Message"
+                class="w-full p-2 border rounded focus:ring-2 focus:ring-indigo-500"></textarea>
+            <button class="w-full py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Submit</button>
+        </form>
+    </section>
+
+    <!-- Animations & Transforms -->
+    <section class="p-10 text-center">
+        <h2 class="text-2xl font-bold mb-6">Animations</h2>
+        <div class="flex justify-center space-x-6">
+            <div class="w-16 h-16 bg-red-400 rounded-full animate-ping"></div>
+            <div class="w-16 h-16 bg-green-400 rounded-full animate-spin"></div>
+            <div class="w-16 h-16 bg-blue-400 rounded-full animate-bounce"></div>
+            <div class="w-16 h-16 bg-yellow-400 rounded-full animate-pulse"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-6 text-center bg-gray-200 dark:bg-gray-700">
+        <p class="text-sm">&copy; 2025 Tailwind Master | Built with ❤️</p>
+    </footer>
+
+</body>
+
+</html>

@@ -74,28 +74,45 @@ console.log("account1 current balance is", account1.balance);
 // Task 4
 
 
+// Base class
 class Shape {
-    getArea(){
-        console.log("Area of a shape")
-    }
-} 
-
-class Circle extends Shape{
-    getArea(){
-        console.log("Area of a circle is Pie r square")
+    getArea() {
+        return 0; // default (to be overridden by subclasses)
     }
 }
 
-class Rectangle extends Shape{
-    getArea(){
-        console.log("Area of rectangle is length * breadth")
+// Circle class extending Shape
+class Circle extends Shape {
+    constructor(radius) {
+        super();
+        this.radius = radius;
+    }
+
+    getArea() {
+        return Math.PI * this.radius * this.radius;
     }
 }
 
-const area1 = new Circle();
-area1.getArea()
-const area2 = new Rectangle();
-area2.getArea()
+// Rectangle class extending Shape
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    getArea() {
+        return this.width * this.height;
+    }
+}
+
+// Create objects
+const circle = new Circle(5);
+const rectangle = new Rectangle(4, 6);
+
+// Call their getArea() methods
+console.log("Circle Area:", circle.getArea());       // 78.54
+console.log("Rectangle Area:", rectangle.getArea()); // 24
 
 // Task 5
 function fetchData(success) {
